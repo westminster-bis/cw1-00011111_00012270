@@ -48,3 +48,10 @@ def get_date():
                 time_flag = True
                 print("Incorrect time format! Try again...")
     return [date_list[2], date_list[1], date_list[0], time_list[0], time_list[1]]
+                  
+def compare_date(d_d,d_s):
+    deadline = datetime.datetime(d_d[0],d_d[1],d_d[2],d_d[3],d_d[4])
+    submission = datetime.datetime(d_s[0],d_s[1],d_s[2],d_s[3],d_s[4])
+    compare_days = (submission-deadline).days 
+    compare_days += math.floor((submission-deadline).seconds / 60) / (24 * 60)
+    return compare_days
