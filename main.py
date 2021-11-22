@@ -62,3 +62,12 @@ def final_print(result):
     print(result)
     print("*"*20)
     print()
+
+mark = get_mark()
+date_deadline = [2021, 12, 1, 23, 59]
+print("Deadline for CW submission is 01/12/2021 (December 1, 2021) 23:59!")
+date_submission = get_date()
+compare_days = compare_date(date_deadline, date_submission)
+
+isValid = None
+isAccepted = None
