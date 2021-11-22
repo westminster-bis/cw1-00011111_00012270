@@ -105,3 +105,16 @@ elif compare_days <= 5:
             final_print("Please, submit on time! You failed to pass this exam (0 mark).")
     else:
         final_print("Please, submit on time! You failed to pass this exam (0 mark).”)
+
+else:
+    final_print("No Submission! Your CW was submitted after more than 5 days.")
+    isValid = get_boolean("Is there a valid reason? Answer YES or NO: ")
+    if isValid:
+        print("Please submit MC form (non-submission/deferral) to academic office before specified deadline!")
+        isAccepted = get_boolean("Was your MC form accepted? Answer YES or NO: ")
+        if isAccepted:
+            final_print("Great job! You have chance for deferral assesment).")
+        else:
+            final_print("Please, submit on time! You failed to pass this exam (0 mark).")
+    else:
+        final_print("Please, submit on time! You failed to pass this exam (0 mark).")
