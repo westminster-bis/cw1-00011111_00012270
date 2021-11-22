@@ -74,3 +74,21 @@ isAccepted = None
                   
 if compare_days <= 0:
     final_print("Great job! You receive " + str(mark) + " (full mark).”)
+elif compare_days <= 1:
+    final_print("Late Submission! Your CW was submitted within 24 hours.")
+    isValid = get_boolean("Is there a valid reason? Answer YES or NO: ")
+    if isValid:
+        print("Please submit MC form to academic office!")
+        isAccepted = get_boolean("Was your MC form accepted? Answer YES or NO: ")
+        if isAccepted:
+            final_print("Great job! You receive " + str(mark) + " (full mark).")
+        else:
+            if mark >= 40:
+                final_print("Please, submit on time! You receive " + str(mark - 10) + " (-10 from your mark).")
+            else:
+                final_print("Please, submit on time! You failed to pass this exam (less than 30 and/or -10 from your mark).")
+    else:
+        if mark >= 40:
+            final_print("Please, submit on time! You receive " + str(mark - 10) + " (-10 from your mark).")
+        else:
+            final_print("Please, submit on time! You failed to pass this exam (less than 40 and -10 from your mark).")
