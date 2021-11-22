@@ -31,20 +31,20 @@ def get_date():
     while date_flag or time_flag:
         if date_flag:
             raw_date = re.sub(r"[^0-9]/","",input("Date of CW submission (dd/mm/yyyy): "))
-            date_list = list(map(int,raw_date.split('/')))
             try:
+                date_list = list(map(int,raw_date.split('/')))
                 test_date = datetime.datetime(date_list[2],date_list[1],date_list[0])
                 date_flag = False
-            except ValueError:
+            except:
                 date_flag = True
                 print("Incorrect date format! Try again...")
         elif time_flag:
             raw_time = re.sub(r"[^0-9]:","",input("Time of CW submission (hh:mm): "))
-            time_list = list(map(int,raw_time.split(':')))
             try:
+                time_list = list(map(int,raw_time.split(':')))
                 test_time = datetime.datetime(date_list[2],date_list[1],date_list[0], time_list[0],time_list[1])
                 time_flag = False
-            except ValueError:
+            except:
                 time_flag = True
                 print("Incorrect time format! Try again...")
     return [date_list[2], date_list[1], date_list[0], time_list[0], time_list[1]]
@@ -104,7 +104,7 @@ elif compare_days <= 5:
         else:
             final_print("Please, submit on time! You failed to pass this exam (0 mark).")
     else:
-        final_print("Please, submit on time! You failed to pass this exam (0 mark).”)
+        final_print("Please, submit on time! You failed to pass this exam (0 mark).")
 
 else:
     final_print("No Submission! Your CW was submitted after more than 5 days.")
