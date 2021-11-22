@@ -71,3 +71,6 @@ compare_days = compare_date(date_deadline, date_submission)
 
 isValid = None
 isAccepted = None
+                  
+if compare_days <= 0:
+    final_print("Great job! You receive " + str(mark) + " (full mark).”)
