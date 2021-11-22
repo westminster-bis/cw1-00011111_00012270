@@ -8,7 +8,7 @@ def get_mark():
         if n >= 0 and n <= 100:
             return n
         else:
-            print("Incorrect! Try again…”)
+            print("Incorrect! Try again…")
 
 
 def get_boolean(question):
@@ -62,3 +62,59 @@ def final_print(result):
     print(result)
     print("*"*20)
     print()
+
+mark = get_mark()
+date_deadline = [2021, 12, 1, 23, 59]
+print("Deadline for CW submission is 01/12/2021 (December 1, 2021) 23:59!")
+date_submission = get_date()
+compare_days = compare_date(date_deadline, date_submission)
+
+isValid = None
+isAccepted = None
+                  
+if compare_days <= 0:
+    final_print("Great job! You receive " + str(mark) + " (full mark).")
+elif compare_days <= 1:
+    final_print("Late Submission! Your CW was submitted within 24 hours.")
+    isValid = get_boolean("Is there a valid reason? Answer YES or NO: ")
+    if isValid:
+        print("Please submit MC form to academic office!")
+        isAccepted = get_boolean("Was your MC form accepted? Answer YES or NO: ")
+        if isAccepted:
+            final_print("Great job! You receive " + str(mark) + " (full mark).")
+        else:
+            if mark >= 40:
+                final_print("Please, submit on time! You receive " + str(mark - 10) + " (-10 from your mark).")
+            else:
+                final_print("Please, submit on time! You failed to pass this exam (less than 30 and/or -10 from your mark).")
+    else:
+        if mark >= 40:
+            final_print("Please, submit on time! You receive " + str(mark - 10) + " (-10 from your mark).")
+        else:
+            final_print("Please, submit on time! You failed to pass this exam (less than 40 and -10 from your mark).")
+   
+elif compare_days <= 5:
+    final_print("Late Submission! Your CW was submitted within 5 days.")
+    isValid = get_boolean("Is there a valid reason? Answer YES or NO: ")
+    if isValid:
+        print("Please submit MC form to academic office!")
+        isAccepted = get_boolean("Was your MC form accepted? Answer YES or NO: ")
+        if isAccepted:
+            final_print("Great job! You receive " + str(mark) + " (full mark).")
+        else:
+            final_print("Please, submit on time! You failed to pass this exam (0 mark).")
+    else:
+        final_print("Please, submit on time! You failed to pass this exam (0 mark).”)
+
+else:
+    final_print("No Submission! Your CW was submitted after more than 5 days.")
+    isValid = get_boolean("Is there a valid reason? Answer YES or NO: ")
+    if isValid:
+        print("Please submit MC form (non-submission/deferral) to academic office before specified deadline!")
+        isAccepted = get_boolean("Was your MC form accepted? Answer YES or NO: ")
+        if isAccepted:
+            final_print("Great job! You have chance for deferral assesment).")
+        else:
+            final_print("Please, submit on time! You failed to pass this exam (0 mark).")
+    else:
+        final_print("Please, submit on time! You failed to pass this exam (0 mark).")
