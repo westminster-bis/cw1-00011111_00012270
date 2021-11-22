@@ -55,3 +55,10 @@ def compare_date(d_d,d_s):
     compare_days = (submission-deadline).days 
     compare_days += math.floor((submission-deadline).seconds / 60) / (24 * 60)
     return compare_days
+                  
+def final_print(result):
+    print()
+    print("*"*20)
+    print(result)
+    print("*"*20)
+    print()
