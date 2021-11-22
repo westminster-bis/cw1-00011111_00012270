@@ -8,7 +8,7 @@ def get_mark():
         if n >= 0 and n <= 100:
             return n
         else:
-            print("Incorrect! Try again…”)
+            print("Incorrect! Try again…")
 
 
 def get_boolean(question):
@@ -73,7 +73,7 @@ isValid = None
 isAccepted = None
                   
 if compare_days <= 0:
-    final_print("Great job! You receive " + str(mark) + " (full mark).”)
+    final_print("Great job! You receive " + str(mark) + " (full mark).")
 elif compare_days <= 1:
     final_print("Late Submission! Your CW was submitted within 24 hours.")
     isValid = get_boolean("Is there a valid reason? Answer YES or NO: ")
