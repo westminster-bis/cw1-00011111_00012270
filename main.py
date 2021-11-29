@@ -1,7 +1,10 @@
 #LIBRARIES
-import re 			#Library to edit strings
-import math 		#Library with basic math operations
-import datetime 	#Library to implement date formats
+#Library to edit strings
+import re
+#Library with basic math operations
+import math
+#Library to implement date formats
+import datetime
 
 #FUNCTIONS
 #Function to get and edit mark of student
